@@ -1,72 +1,94 @@
-# Event / Catering Management
+# Event & Catering Management
 
-## Pages & Features
+Event planning and catering management with guest and menu tracking.
 
-### 1. Dashboard
-- Upcoming events timeline
-- Revenue this month / quarter
-- Active proposals & bookings count
-- Staff availability overview
-- Today's event checklist
+Part of [The Mehdi Verse](https://github.com/mxn2020) — a collection of open-source sample applications.
 
-### 2. Events
-- Event list with date, type, status filters
-- Create new event (name, date, venue, type, guests count)
-- Event detail page: timeline, checklist, staff, menu, notes
-- Event status workflow (inquiry → proposal → confirmed → in-progress → completed)
-- Event calendar view (month / week)
-- Recurring event templates
+## Tech Stack
 
-### 3. Inquiries & Proposals
-- Inquiry intake form (client info, event type, date, budget)
-- Generate proposal with menu options & pricing
-- Proposal versioning & comparison
-- Client approval / revision workflow
-- Convert approved proposal to event
+- **Frontend**: React 19 + TypeScript + Vite
+- **Backend**: [Shared Convex deployment](https://github.com/mxn2020/the-mehdi-verse-convex-backend)
+- **Auth**: Email/password via `@convex-dev/auth`
 
-### 4. Menus & Packages
-- Menu builder (courses, items, portions per head)
-- Package templates (platinum, gold, silver)
-- Dietary restriction options (vegan, halal, gluten-free)
-- Cost per plate / per head calculation
-- Menu tasting scheduling
+## Getting Started
 
-### 5. Venues
-- Venue list with capacity, amenities, photos
-- Venue availability calendar
-- Floor plan / layout options
-- Venue cost & rental terms
-- External venue partnerships
+```bash
+npm install
+cp .env.example .env.local
+# Set VITE_CONVEX_URL to your deployment URL
+npm run dev
+```
 
-### 6. Clients
-- Client directory with contact info
-- Event history per client
-- Client preferences & notes
-- Feedback & reviews
+## License
 
-### 7. Staff & Resources
-- Staff assignment per event (chef, server, coordinator)
-- Equipment / rental inventory (tables, chairs, AV, decor)
-- Vendor management (florist, DJ, photographer)
-- Resource availability check
+MIT © Mehdi Nabhani
 
-### 8. Billing & Invoicing
-- Generate invoice from event booking
-- Deposit & milestone payment tracking
-- Final invoice with actual vs. estimated costs
-- Payment recording
-- Refund / credit management
+---
 
-### 9. Reports
-- Revenue by event type, month, client
-- Cost breakdown per event
-- Staff utilization
-- Client satisfaction scores
-- Export as PDF / CSV
+<details>
+<summary>📋 Original Feature Spec</summary>
 
-### 10. Settings
-- Business profile & branding
-- Event type configuration
-- Tax & service charge rates
-- Email / notification templates
-- User roles & permissions
+# {{APP_TITLE}}
+
+{{APP_DESCRIPTION}}
+
+Part of [The Mehdi Verse](https://github.com/mxn2020) — a collection of open-source sample applications.
+
+## Tech Stack
+
+- **Frontend**: React 19 + TypeScript + Vite
+- **Backend**: [Shared Convex deployment](https://github.com/mxn2020/the-mehdi-verse-convex-backend)
+- **Auth**: Email/password via `@convex-dev/auth`
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js 22+
+- A running [shared Convex backend](https://github.com/mxn2020/the-mehdi-verse-convex-backend)
+
+### Setup
+
+```bash
+# Install dependencies
+npm install
+
+# Create .env.local with your Convex URL
+cp .env.example .env.local
+# Edit .env.local and set VITE_CONVEX_URL to your deployment URL
+
+# Start the dev server
+npm run dev
+```
+
+Open [http://localhost:5173](http://localhost:5173) to view the app.
+
+## Scripts
+
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Start Vite dev server |
+| `npm run build` | Build for production |
+| `npm run preview` | Preview production build |
+| `npm run typecheck` | Run TypeScript type checking |
+
+## Project Structure
+
+```
+src/
+  main.tsx              # Entry point with ConvexAuthProvider
+  App.tsx               # Auth routing (Landing vs Dashboard)
+  App.css               # Component styles
+  index.css             # Global styles & design tokens
+  components/
+    Landing.tsx          # Marketing/landing page
+    SignIn.tsx           # Auth form (sign-in/sign-up)
+    Dashboard.tsx        # Authenticated app shell
+api.ts                   # Convex API types (from shared backend)
+```
+
+## License
+
+MIT © Mehdi Nabhani
+
+</details>
